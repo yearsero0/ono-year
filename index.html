@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversario, Mi Amor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            max-width: 700px;
+            padding: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #ff4e50;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-out forwards;
+            opacity: 0;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 3s ease-out forwards;
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 4s ease-out forwards;
+        }
+
+        a {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #ff4e50;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+            opacity: 0;
+            animation: fadeIn 4.5s ease-out forwards;
+        }
+
+        a:hover {
+            background-color: #ff758c;
+        }
+
+        /* Estilos para la animación de carga */
+        .loader-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .loader-text {
+            font-size: 1.5rem;
+            color: #ff4e50;
+            margin-bottom: 20px;
+            animation: blinkText 1.5s infinite;
+        }
+
+        .dots {
+            font-size: 2rem;
+            color: #ff4e50;
+        }
+
+        @keyframes blinkText {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+    <script>
+        function showLoader() {
+            const loader = document.querySelector('.loader-container');
+            loader.style.display = 'block';
+
+            // Simulamos la carga durante 3 segundos antes de redirigir
+            setTimeout(() => {
+                window.location.href = "2.html"; // Redirige a la página de recuerdos
+            }, 3000);
+        }
+
+        function animateDots() {
+            const dots = document.querySelector('.dots');
+            let dotCount = 0;
+
+            setInterval(() => {
+                dotCount = (dotCount + 1) % 4;
+                dots.textContent = '.'.repeat(dotCount);
+            }, 500);
+        }
+
+        window.onload = animateDots;
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Feliz Primer Aniversario</h1>
+        <h2>Siempre juntos, no importa la distancia</h2>
+        <p>
+            Ha sido un año maravilloso, lleno de amor y alegría. Cada momento a tu lado es único, y no importa lo lejos que estemos, 
+            siempre siento tu amor cerca. Gracias por ser mi inspiración cada día.
+        </p>
+        <a href="javascript:void(0)" onclick="showLoader()">Nuestros recuerdos especiales</a>
+    </div>
+
+    <!-- Animación de carga romántica -->
+    <div class="loader-container">
+        <div class="loader-text"></div>
+        <div class="dots">...</div>
+    </div>
+
+</body>
+</html>
